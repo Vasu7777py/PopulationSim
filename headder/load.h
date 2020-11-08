@@ -1,0 +1,88 @@
+#pragma once
+
+#include <conio.h>
+#include <stdlib.h>
+#include <iostream>
+#include <time.h>
+#include <random>
+#include <string>
+
+namespace SimMath {
+	template <typename type>
+	struct Vector2d {
+		type x, y;
+
+		//Vector2d();
+		Vector2d(type x, type y);
+
+		Vector2d<type> operator+(Vector2d<type>* other);
+		Vector2d<type> operator-(Vector2d<type>* other);
+	};
+
+	template <typename type>
+	struct Vector3d {
+		type x, y, z;
+
+		//Vector3d();
+		Vector3d(type x, type y, type z);
+	};
+}
+
+namespace SimDS {
+	template <typename type>
+	class LinkedList1d {
+	private:
+		struct node1d {
+			type data;
+			node1d* nxt;
+		};
+		node1d *head, * tail;
+		int size;
+	public:
+		LinkedList1d();
+		
+		LinkedList1d<type>* getHead();
+		LinkedList1d<type>* getTail();
+		int getSize();
+		node1d* getNode(int Position);
+		int find(type data);
+		//const node1d* getNode(type data);
+	};
+
+	template <typename type>
+	class LinkedList2d {
+
+	};
+}
+
+namespace Sim{
+	struct Gene{
+		float health, strenght, energy, reproductiveRate;
+		float friendlyValue; // 0-1
+		std::string familyName;
+		Gene();
+		Gene(float health, float strenght, float energy, float reproductiveRate, float friendlyValue, std::string familyName);
+	};
+
+	class Person {
+	private:
+		Gene traids;
+		int age;
+		char sex;
+
+		Person* friends;
+
+	public:
+		Person();
+		Person(Gene traid, char sex);
+
+		const Gene* getGene();
+		const int getAge();
+		const char getSex();
+	};
+
+	class food {
+	private:
+		
+	};
+}

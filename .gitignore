@@ -30,3 +30,8 @@
 *.exe
 *.out
 *.app
+/.vs/PopulationSim/v16
+/PopulationSim.vcxproj.user
+/PopulationSim.vcxproj.filters
+/PopulationSim.vcxproj
+/PopulationSim.sln
