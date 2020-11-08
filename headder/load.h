@@ -7,8 +7,10 @@
 #include <random>
 #include <string>
 
+#define TEMP template <typename type>
+
 namespace SimMath {
-	template <typename type>
+	TEMP
 	struct Vector2d {
 		type x, y;
 
@@ -19,7 +21,7 @@ namespace SimMath {
 		Vector2d<type> operator-(Vector2d<type>* other);
 	};
 
-	template <typename type>
+	TEMP
 	struct Vector3d {
 		type x, y, z;
 
@@ -29,29 +31,50 @@ namespace SimMath {
 }
 
 namespace SimDS {
-	template <typename type>
+	TEMP
 	class LinkedList1d {
 	private:
 		struct node1d {
 			type data;
 			node1d* nxt;
 		};
-		node1d *head, * tail;
+		node1d* head, * tail;
 		int size;
 	public:
 		LinkedList1d();
 		
-		LinkedList1d<type>* getHead();
-		LinkedList1d<type>* getTail();
+		node1d* getHead();
+		node1d* getTail();
 		int getSize();
+		void Print();
 		node1d* getNode(int Position);
 		int find(type data);
-		//const node1d* getNode(type data);
+		void addLast(type data);
+		void addFirst(type data);
+		void addNode(type data, int index);
 	};
 
-	template <typename type>
+	TEMP
 	class LinkedList2d {
+	private:
+		struct node2d {
+			type data;
+			node2d* nxt, * prev;
+		};
+		node2d* head, * tail;
+		int size;
+	public:
+		LinkedList2d();
 
+		node2d* getHead();
+		node2d* getTail();
+		int getSize();
+		void Print();
+		node2d* getNode(int Position);
+		int find(type data);
+		void addLast(type data);
+		void addFirst(type data);
+		void addNode(type data, int index);
 	};
 }
 

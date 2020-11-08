@@ -1,13 +1,13 @@
 
 #include "../headder/load.h"
 
-template <typename type>
+TEMP
 SimMath::Vector2d<type>::Vector2d(type x, type y) {
 	this->x = x;
 	this->y = y;
 }
 
-template <typename type>
+TEMP
 SimMath::Vector2d<type> SimMath::Vector2d<type>::operator+(Vector2d<type>* other) {
 	Vector2d<type> ans;
 	ans.x = (this->x + other->x);
@@ -15,7 +15,7 @@ SimMath::Vector2d<type> SimMath::Vector2d<type>::operator+(Vector2d<type>* other
 	return ans;
 }
 
-template <typename type>
+TEMP
 SimMath::Vector2d<type> SimMath::Vector2d<type>::operator-(Vector2d<type>* other) {
 	Vector2d<type> ans;
 	ans.x = (this->x - other->x);
@@ -23,7 +23,7 @@ SimMath::Vector2d<type> SimMath::Vector2d<type>::operator-(Vector2d<type>* other
 	return ans;
 }
 
-template <typename type>
+TEMP
 SimMath::Vector3d<type>::Vector3d(type x, type y, type z) {
 	this->x = x;
 	this->y = y;
